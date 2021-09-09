@@ -3,6 +3,7 @@ on:
   rss:
   # triggers are multiple rss feeds. as soon a change is happening, trigger fires
     url: 
+      - https://www.xrel.to/releases-usrss.html?u=19414&s=02dab35eb68f86f4ed69d708c4591841
       - https://hnrss.org/newest?points=300
       - http://feeds.bbci.co.uk/news/world/rss.xml
       - https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml
