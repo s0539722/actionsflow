@@ -1,7 +1,13 @@
 name: mail
 on:
   rss:
-    url: https://hnrss.org/newest?points=300
+  # triggers are multiple rss feeds. as soon a change is happening, trigger fires
+    url: 
+      - https://hnrss.org/newest?points=300
+      - http://feeds.bbci.co.uk/news/world/rss.xml
+      - https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml
+      - https://www.buzzfeed.com/world.xml
+      - http://rss.cnn.com/rss/edition_world.rss
     config:
       every: "*/1 * * * *"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
