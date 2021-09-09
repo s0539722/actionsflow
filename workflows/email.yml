@@ -31,15 +31,16 @@ jobs:
           # Optional (recommended) mail server password:
           password: ${{secrets.MAIL_PASSWORD}}
           # Required mail subject:
-          subject: Github Actions job result
+          subject: Impfnachweise - Die Gute Stube
           # Required recipients' addresses:
           to: punkvoter.com@gmail.com
+          #to: tonkollektiv.status@gmail.com
           # Required sender full name (address can be skipped):
           from: Sebastian John <sebastian.john@gmx.net>
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
-          body: Test
+          body: "Hallo,\n\n anbei die vier Impfnachweise der Guten Stube."
           # Optional HTML body read from file:
           #html_body: file://README.html
           # Optional carbon copy recipients:
