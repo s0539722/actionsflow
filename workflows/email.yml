@@ -1,16 +1,9 @@
 name: mail
 on:
-  rss:
-  # triggers are multiple rss feeds. as soon a change is happening, trigger fires
-    url: 
-      - https://www.xrel.to/releases-usrss.html?u=19414&s=02dab35eb68f86f4ed69d708c4591841
-      - https://hnrss.org/newest?points=300
-      - http://feeds.bbci.co.uk/news/world/rss.xml
-      - https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml
-      - https://www.buzzfeed.com/world.xml
-      - http://rss.cnn.com/rss/edition_world.rss
+  poll:
+  url: https://jsonplaceholder.typicode.com/posts
     config:
-      every: "*/1 * * * *"
+      every: "*/5 * * * *"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "email"
