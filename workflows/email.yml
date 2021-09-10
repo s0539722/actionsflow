@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: debug
         run: |
-          pwd
+          cd workflows
           ls -ltr
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
