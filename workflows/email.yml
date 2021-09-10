@@ -15,9 +15,9 @@ jobs:
     steps:
       - name: debug
         run: |
-          ls | tr "\n" " "
+          ls
           cd workflow
-          ls | tr "\n" " "
+          ls
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
