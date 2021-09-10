@@ -14,9 +14,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: download file
+        env:
+          TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+        run: |
+          curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/Impfnachweise.zip -O -J -L
       - name: debug
         run: |
-          cat /github/workspace/actionsflow/workflows/Impfnachweise.zip
+          ls
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
@@ -52,6 +57,6 @@ jobs:
           # Optional converting Markdown to HTML (set content_type to text/html too):
           #convert_markdown: true
           # Optional attachments:
-          attachments: ./workflows/Impfnachweise.zip
+          attachments: Impfnachweise.zip
           # Optional priority: 'high', 'normal' (default) or 'low'
           #priority: low
