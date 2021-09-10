@@ -15,7 +15,12 @@ jobs:
     steps:
       - name: debug
         run: |
-          find / -name Impfnachweise.zip
+          cd ..
+          ls
+          cd ..
+          ls
+          cd ..
+          ls
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
