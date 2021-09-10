@@ -14,14 +14,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # 1) download attachement from own repo into container
       - name: download file
         env:
           TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         run: |
           curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/Impfnachweise.zip -O -J -L
-      - name: debug
-        run: |
-          ls
+          curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/html_body.html -O -J -L
+      # 2) user action-send-mail to send the email
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
@@ -43,9 +43,9 @@ jobs:
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
-          body: "Hallo,\n\n anbei die vier Impfnachweise der Guten Stube."
+          #body: "Hallo,\n\n anbei die vier Impfnachweise der Guten Stube."
           # Optional HTML body read from file:
-          #html_body: file://README.html
+          html_body: file://html_body.html
           # Optional carbon copy recipients:
           #cc: kyloren@example.com,leia@example.com
           # Optional blind carbon copy recipients:
