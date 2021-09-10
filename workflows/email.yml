@@ -4,6 +4,7 @@ on:
     url: http://worldtimeapi.org/api/timezone/Europe/Berlin
     config:
     every: "*/5 * * * *"
+    paths: 'actionsflow/workflows/Impfnachweise.zip'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "email"
@@ -15,6 +16,7 @@ jobs:
     steps:
       - name: debug
         run: |
+          ls
           cd ..
           ls
           cd ..
