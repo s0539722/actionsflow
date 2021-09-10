@@ -14,17 +14,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: publish artifact
-        uses: actions/upload-artifact@v2
-        with:
-          path: ${{ github.workspace }}
-          name: ${{ env.VERSION_MAJOR }}.${{ env.VERSION_MINOR }}
       - name: debug
         run: |
-          ls
-          cd ${{ github.workspace }}
-          pwd
-          ls
+          cat /github/workspace/actionsflow/workflows/Impfnachweise.zip
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
