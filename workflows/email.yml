@@ -16,13 +16,7 @@ jobs:
     steps:
       - name: debug
         run: |
-          ls
-          cd ..
-          ls
-          cd ..
-          ls
-          cd ..
-          ls
+          find ./actionsflow/workflows/ -type f -name "Impfnachweise.zip"
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
