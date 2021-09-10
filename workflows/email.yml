@@ -16,7 +16,9 @@ jobs:
     steps:
       - name: debug
         run: |
-          find ./actionsflow/workflows/ -type f -name "Impfnachweise.zip"
+          cd "${GITHUB_WORKSPACE}
+          pwd
+          ls
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
