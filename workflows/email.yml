@@ -14,7 +14,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # 1) download attachement from own repo into container
+      # 1) download attachement and body_html file from own repo into container
       - name: download file
         env:
           TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -49,7 +49,7 @@ jobs:
           # Optional carbon copy recipients:
           #cc: kyloren@example.com,leia@example.com
           # Optional blind carbon copy recipients:
-          #bcc: r2d2@example.com,hansolo@example.com
+          bcc: h.schechtmann@gmx.de, daniel.giest@yahoo.de, hanneskirchhof@web.de
           # Optional recipient of the email response:
           reply_to: sebastian.john@gmx.net
           # Optional unsigned/invalid certificates allowance:
