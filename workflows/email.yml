@@ -15,8 +15,9 @@ jobs:
     steps:
       - name: debug
         run: |
+          ls | tr "\n" " "
           cd workflow
-          cat Impfnachweise.zip
+          ls | tr "\n" " "
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
