@@ -21,6 +21,11 @@ jobs:
         run: |
           curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/Impfnachweise.zip -O -J -L
           curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/html_body.html -O -J -L
+        # TODO: 1) get json with url from giphy api
+        # curl api.giphy.com/v1/gifs/search?api_key=spspxOmpzvSVGkvs1J0KuebU3AiE1lkL&q='rock music'&limit=1 -o response.json -J -L
+        # TODO: 2) parse json for "data[0].url" with jq
+        # URL="$(jq 'data[0].url' response.json)"
+        # TODO: 3) replace a string inside html_body.html with parsed url
       # 2) user action-send-mail to send the email
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
