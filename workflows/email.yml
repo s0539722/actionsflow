@@ -23,8 +23,8 @@ jobs:
           curl -H "Authorization: token ${TOKEN_GITHUB}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/Impfnachweise.zip -O -J -L
           curl -H "Authorization: token ${TOKEN_GITHUB}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/html_body.html -O -J -L
           curl "https://api.giphy.com/v1/gifs/search?api_key=${TOKEN_GIPHY}&q=%27rock%20music%27&limit=1" --output response.json -J -L
-          sudo apt-get update
-          sudo apt-get install jq
+          apt-get update
+          apt-get install jq
           URL="$(jq 'data[0].url' response.json)"
           sed -i "s/{MEME_URL}/${URL}/g" html_body.html
       # 2) user action-send-mail to send the email
