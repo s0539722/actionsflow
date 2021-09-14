@@ -23,8 +23,8 @@ jobs:
           curl -H "Authorization: token ${TOKEN_GITHUB}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/Impfnachweise.zip -O -J -L
           curl -H "Authorization: token ${TOKEN_GITHUB}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/html_body.html -O -J -L
           curl api.giphy.com/v1/gifs/search?api_key=${TOKEN_GIPHY}&q='rock music'&limit=1 -o response.json -J -L
-          URL="$(jq 'data[0].url' response.json)"
-          sed -i 's/{MEME_URL}/${URL}/g' html_body.html
+        # URL="$(jq 'data[0].url' response.json)"
+        # sed -i 's/{MEME_URL}/${URL}/g' html_body.html
       # 2) user action-send-mail to send the email
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
