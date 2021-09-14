@@ -22,11 +22,11 @@ jobs:
         run: |
           curl -H "Authorization: token ${TOKEN_GITHUB}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/Impfnachweise.zip -O -J -L
           curl -H "Authorization: token ${TOKEN_GITHUB}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/html_body.html -O -J -L
-        # TODO: 1) get json with url from giphy api
+# 1.1) get json with url from giphy api
           curl api.giphy.com/v1/gifs/search?api_key=${TOKEN_GIPHY}&q='rock music'&limit=1 -o response.json -J -L
-        # TODO: 2) parse json for "data[0].url" with jq
+# 1.2) parse json for "data[0].url" with jq
           URL="$(jq 'data[0].url' response.json)"
-        # TODO: 3) replace string {MEME_URL} inside html_body.html with parsed url
+# 1.3) replace string {MEME_URL} inside html_body.html with parsed url
           sed -i 's/{MEME_URL}/${URL}/g' html_body.html
       # 2) user action-send-mail to send the email
       - name: Send mail
