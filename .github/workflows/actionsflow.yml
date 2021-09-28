@@ -1,8 +1,8 @@
 name: Actionsflow
 on:
   schedule:
-  # UTC time 14:00 Friday equals 16:00 Friday CEST (UTC+2)
-    - cron: "0 14 * * 5"
+  # UTC time 14:00 Tuesday equals 16:00 Tuesday CEST (UTC+2)
+    - cron: "0 14 * * 2"
 #   push:
 #     branches:
 #       - main
