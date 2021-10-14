@@ -20,9 +20,10 @@ jobs:
           TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           TOKEN_GIPHY: ${{ secrets.API_TOKEN_GIPHY }}
         run: |
+          rm -f response.json
           curl -H "Authorization: token ${TOKEN_GITHUB}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/Impfnachweise.zip -O -J -L
           curl -H "Authorization: token ${TOKEN_GITHUB}" https://raw.githubusercontent.com/s0539722/actionsflow/main/workflows/html_body.html -O -J -L
-          curl "https://api.giphy.com/v1/gifs/search?api_key=${TOKEN_GIPHY}&q=%27music%27&limit=1" --output response.json -J -L
+          curl "https://api.giphy.com/v1/gifs/random?api_key=${TOKEN_GIPHY}" --output response.json -J -L
           apt-get update
           apt-get -yq install jq
           URL="$(jq '.data[0].url' response.json)"
