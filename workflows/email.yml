@@ -26,7 +26,7 @@ jobs:
           curl "https://api.giphy.com/v1/gifs/random?api_key=${TOKEN_GIPHY}" --output response.json -J -L
           apt-get update
           apt-get -yq install jq
-          URL="$(jq '.data[0].url' response.json)"
+          URL="$(jq '.data.url' response.json)"
           sed -i "s|{MEME_URL}|${URL}|g" html_body.html
       # 2) user action-send-mail to send the email
       - name: Send mail
