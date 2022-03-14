@@ -2,7 +2,7 @@ name: Actionsflow
 on:
   schedule:
   # UTC time 14:00 2 equals 16:00 Tuesday CEST (UTC+2)
-    - cron: "0 14 * * 2"
+    - cron: "0 14 * * 3"
 #   push:
 #     branches:
 #       - main
