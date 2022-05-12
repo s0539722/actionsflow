@@ -43,7 +43,7 @@ jobs:
           # Required mail subject:
           subject: Impfnachweise - Die Gute Stube
           # Required recipients' addresses:
-          to: punkvoter.com@gmail.com
+          #to: punkvoter.com@gmail.com
           #to: tonkollektiv.status@gmail.com
           # Required sender full name (address can be skipped):
           from: Sebastian John <sebastian.john@gmx.net>
